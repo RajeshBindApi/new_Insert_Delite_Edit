@@ -20,6 +20,8 @@
                     </div>
                     <div class="card-body">
                         <table class="table table-bordered">
+                            <thead>
+                              <tr>
                                 <td>ID</td>
                                 <td>Full Name</td>
                                 <td>Email</td>
@@ -27,9 +29,11 @@
                                 <td>Class</td>
                                 <td>Edit/Update</td>
                                 <td>Delete</td>
-                            </tr>
+                              </tr>
+                            </thead>
+                            <tbody id="list">
                             <?php foreach($data as $user){?>
-                            <tr id="list">
+                            <tr>
                                 <td><?php echo $user['id'] ?></td>
                                 <td class="td"><?php echo $user['fullname'] ?></td>
                                 <td class="td"><?php echo $user['email'] ?></td>
@@ -38,7 +42,8 @@
                                 <td><a class="btn btn-warning td" href="update.php?update_id=<?php echo $user['id'] ?>">Edit/Update</a></td>
                                 <td><a class="btn btn-danger td" href="delete.php?delete_id=<?php echo $user['id'] ?>">Delete</a></td> 
                             </tr>
-                            <?php } ?>   
+                            <?php } ?>
+                            </tbody>      
                         </table>
                     </div>
                 </div>

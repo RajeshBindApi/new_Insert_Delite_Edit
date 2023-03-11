@@ -1,11 +1,8 @@
-$('#search-bar').keyup(function(){
-    var value = $(this).val().toLowerCase();
-    $('#list .td').each(function(){
-        var search = $(this).text().toLowerCase();
-        if(search.indexOf(value)>-1){
-            $(this).show();
-        }else{
-            $(this).hide();
-        }
-    })
-})
+$(document).ready(function(){
+    $("#search-bar").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#list tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
