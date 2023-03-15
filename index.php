@@ -16,7 +16,8 @@
             <div class="col-md-12 mt-4">
                 <div class="card">
                     <div class="card-header">
-                        <input type="text" id="search-bar" class="mt-3" placeholder="Search for table...."><h3><a href="add_user.php" class="btn btn-primary float-end">Add User</a></h3>
+                        <h2>Search User</h2>
+                        <input type="text" id="search-bar" class="form-control rounded w-25" placeholder="Search in table...."><h3><a href="add_user.php" class="btn btn-primary float-end">Add User</a>
                     </div>
                     <div class="card-body">
                         <table class="table table-bordered">
