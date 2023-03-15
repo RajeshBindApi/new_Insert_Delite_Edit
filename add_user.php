@@ -14,7 +14,7 @@
             <div class="col-md-12 mt-4">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Data Creation in student Ensert
+                        <h3>Data Creation in student Insert
                             <a href="index.php" class="btn btn-danger float-end">Back</a>
                         </h3>
                     </div>
