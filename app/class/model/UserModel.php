@@ -16,9 +16,9 @@
         }
         public function savedata($data)
         {
-            $sql = "INSERT INTO students (fullname, email  , phone, class) VALUES (?,?,?,?)";
+            $sql = "INSERT INTO students (fullname, email  , phone) VALUES (?,?,?)";
             $stmt = $this->conn->prepare($sql);
-            $insert = $stmt->execute([$data['fullname'],$data['email'],$data['phone'],$data['class'],]);
+            $insert = $stmt->execute([$data['fullname'],$data['email'],$data['phone']]);
             if($insert){
                 header('location:index.php');
             }
@@ -28,7 +28,7 @@
         {
             $sql = "UPDATE students SET id=?, fullname=?, email=?, phone=?, class=?  WHERE id=?";
             $stmt = $this->conn->prepare($sql);
-            $update = $result = $stmt->execute([$id,$data['fullname'],$data['email'],$data['phone'],$data['class'],$id]);
+            $update = $result = $stmt->execute([$id,$data['fullname'],$data['email'],$data['phone'],$id]);
             if($update){
                 header('location:index.php');
             }
