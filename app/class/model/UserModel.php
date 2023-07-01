@@ -28,7 +28,7 @@
         {
             $sql = "UPDATE students SET id=?, name=?, email=?, phone=?, course=?  WHERE id=?";
             $stmt = $this->conn->prepare($sql);
-            $update = $result = $stmt->execute([$id,$data['name'],$data['email'],$data['phone'],$data['course'],$id]);
+            $update = $stmt->execute([$id,$data['name'],$data['email'],$data['phone'],$data['course'],$id]);
             if($update){
                 header('location:index.php');
             }
