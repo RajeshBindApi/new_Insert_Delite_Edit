@@ -1,4 +1,12 @@
-<?php include('user.php') ?>
+<?php
+    include('./app/init.php');
+    $userController = new UserController(new UserModel($db));
+    $data = $userController->getUser();
+    if(isset($_POST['save_student']))
+    {
+        $userController->saveUser($_POST);
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +31,7 @@
                         <form action="" method="post">
                             <div class="mb-3">
                                 <label>Full Name</label>
-                                <input type="text" name="fullname" class="form-control"/>
+                                <input type="text" name="name" class="form-control"/>
                             </div>
                             <div class="mb-3">
                                 <label>Email</label>
@@ -35,7 +43,7 @@
                             </div>
                             <div class="mb-3">
                                 <label>class</label>
-                                <input type="text" name="class" class="form-control"/>
+                                <input type="text" name="course" class="form-control"/>
                             </div>
                             <div class="mb-3">
                                <button type="submit" name="save_student" class="btn btn-primary">Save Student</button>

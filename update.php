@@ -32,7 +32,7 @@
                         <form method="post">
                             <div class="mb-3">
                                 <label>Full Name</label>
-                                <input type="text" name="fullname" value="<?php echo $data['fullname'] ?>" class="form-control"/>
+                                <input type="text" name="name" value="<?php echo $data['name'] ?>" class="form-control"/>
                             </div>
                             <div class="mb-3">
                                 <label>Email</label>
@@ -44,7 +44,7 @@
                             </div>
                             <div class="mb-3">
                                 <label>class</label>
-                                <input type="text" name="class"  value="<?php echo $data['class'] ?>" class="form-control"/>
+                                <input type="text" name="course"  value="<?php echo $data['course'] ?>" class="form-control"/>
                             </div>
                             <div class="mb-3">
                                <button type="submit" name="update_student" class="btn btn-primary">Update Student</button>
