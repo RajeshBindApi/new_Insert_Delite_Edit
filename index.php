@@ -1,35 +1,25 @@
 <?php
-    include('./app/init.php');
-    $userController = new UserController(new UserModel($db));
-    $data = $userController->getUser();
-    if(isset($_POST['save_student']))
-    {
-        $userController->saveUser($_POST);
-    }
+include('./app/init.php');
+$userController = new UserController(new UserModel($db));
+$data = $userController->getUser();
+if (isset($_POST['save_student'])) {
+    $userController->saveUser($_POST);
+}
 ?>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/bootstrap.min.css">
-        <script src="./css/jquery-3.6.3.js"></script>
-        <title>Document</title>
-    </head>
-    <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 mt-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Search Student</h2>
-                        <input type="text" id="search-bar" class="form-control rounded w-25" placeholder="Search in table...."><h3><a href="add_user.php" class="btn btn-primary float-end">Add Student</a>
-                    </div>
-                    <div class="card-body">
-                        <table class="table table-bordered">
-                            <thead>
-                              <tr>
+<?php include('./thems/header.php') ?>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mt-4">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Search Student</h2>
+                    <input type="text" id="search-bar" class="form-control rounded w-25" placeholder="Search in table....">
+                    <h3><a href="add_user.php" class="btn btn-primary float-end">Add Student</a>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
                                 <td>ID</td>
                                 <td>Full Name</td>
                                 <td>Email</td>
@@ -37,27 +27,25 @@
                                 <td>Course</td>
                                 <td>Edit/Update</td>
                                 <td>Delete</td>
-                              </tr>
-                            </thead>
-                            <tbody id="list">
-                            <?php foreach($data as $user){?>
-                            <tr>
-                                <td><?php echo $user['id'] ?></td>
-                                <td class="td"><?php echo $user['name'] ?></td>
-                                <td class="td"><?php echo $user['email'] ?></td>
-                                <td class="td"><?php echo $user['phone'] ?></td>
-                                <td class="td"><?php echo $user['course'] ?></td>
-                                <td><a class="btn btn-warning td" href="update.php?update_id=<?php echo $user['id'] ?>">Edit/Update</a></td>
-                                <td><a class="btn btn-danger td" href="delete.php?delete_id=<?php echo $user['id'] ?>">Delete</a></td> 
                             </tr>
+                        </thead>
+                        <tbody id="list">
+                            <?php foreach ($data as $user) { ?>
+                                <tr>
+                                    <td><?php echo $user['id'] ?></td>
+                                    <td class="td"><?php echo $user['name'] ?></td>
+                                    <td class="td"><?php echo $user['email'] ?></td>
+                                    <td class="td"><?php echo $user['phone'] ?></td>
+                                    <td class="td"><?php echo $user['course'] ?></td>
+                                    <td><a class="btn btn-warning td" href="update.php?update_id=<?php echo $user['id'] ?>">Edit/Update</a></td>
+                                    <td><a class="btn btn-danger td" href="delete.php?delete_id=<?php echo $user['id'] ?>">Delete</a></td>
+                                </tr>
                             <?php } ?>
-                            </tbody>      
-                        </table>
-                    </div>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-    <script src="./js/script.js"></script>
-</body>
-</html>
+</div>
+<?php include('./thems/footer.php') ?>
