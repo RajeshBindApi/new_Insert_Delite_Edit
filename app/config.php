@@ -1,6 +1,6 @@
 <?php
 $server = "localhost";
-$dbname = "dev7";
+$dbname = "dev5_class";
 $user = "root";
 $pass = "";
 
